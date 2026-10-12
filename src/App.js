@@ -1,36 +1,29 @@
-import logo from './logo.svg';
-import React,{useState} from "react"
+import React from 'react';
 import './App.css';
-import "./index.css"
-import Header from './coponents.js/Header';
-import Hero from './coponents.js/Hero';
-import About from './coponents.js/About';
-import Contact from './coponents.js/Contact';
-import Dropdown from './coponents.js/Dropdown';
+import './index.css';
 
-
-
-
-
-
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Sponsors from './components/Sponsors';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
-  const[isopen, setisopen] = useState(false);
-  const toggle=()=>{
-    setisopen(!isopen);
-  }
-  return (
-    
-    <><Header toggle={toggle}/>
-    <Dropdown isopen={isopen} toggle={isopen}/>
-    <Hero/>
-    <About/>
-    <Contact/>
-    
-    
-    </>
-  
-  )
+    return (
+        <div className="min-h-screen bg-black text-white">
+            <Header />
+
+            <main>
+                <Hero />
+                <About />
+                <Sponsors />
+                <Contact />
+            </main>
+
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
